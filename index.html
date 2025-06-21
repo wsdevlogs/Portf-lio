@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark transition-colors duration-300">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Willian Santos | Criador de Sites</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  
+</head>
+
+<body class="font-sans antialiased text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-100">
+
+  <!-- Header fixo -->
+  <header class="bg-blue-600 text-white fixed w-full z-50">
+    <div class="container mx-auto flex items-center justify-between p-6">
+      <div class="flex items-center space-x-3">
+        <img src="will.png" alt="Willian" class="w-10 h-10 rounded-full">
+        <h1 class="text-2xl font-bold">Willian Santos</h1>
+      </div>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#servicos" class="hover:underline">Serviços</a>
+        <a href="#portfolio" class="hover:underline">Portfólio</a>
+        <a href="#depoimentos" class="hover:underline">Depoimentos</a>
+        <a href="#contato" class="hover:underline">Contato</a>
+      </nav>
+      <div class="flex space-x-3">
+        <button id="darkModeToggle" class="bg-gray-700 hover:bg-gray-800 p-2 rounded">🌙☀️</button>
+        <a href="https://wa.me/5541920024397" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transform transition-transform hover:scale-105">Solicitar Orçamento</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+
+    <!-- Hero -->
+    <section class="bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto text-center py-16">
+        <h2 class="text-4xl font-bold mb-4">Transforme Sua Ideia em um Site Profissional!</h2>
+        <p class="text-lg mb-6">Criação de sites e landing pages rápidas, responsivas e pensadas para gerar resultados.</p>
+        <a href="https://wa.me/5541920024397" class="bg-green-500 hover:bg-green-600 text-white py-3 px-8 rounded-lg text-lg transform transition-transform hover:scale-110">Quero Meu Site Agora</a>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="container mx-auto py-16 text-center">
+      <h2 class="text-3xl font-semibold mb-4">Sobre Mim</h2>
+      <p class="max-w-2xl mx-auto">Olá! Sou Willian Santos, desenvolvedor especializado na criação de sites rápidos, responsivos e focados em conversão. Tenho paixão por transformar ideias em projetos digitais de sucesso.</p>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="container mx-auto py-16 text-center">
+      <h2 class="text-3xl font-semibold mb-8">Meus Serviços</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow">Sites Rápidos e Otimizados</div>
+        <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow">Design Responsivo</div>
+        <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow">SEO Básico</div>
+        <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow">Landing Pages Estratégicas</div>
+        <div class="p-6 bg-white dark:bg-gray-700 rounded-lg shadow">Suporte Pós-Entrega</div>
+      </div>
+    </section>
+
+    <!-- Portfólio com carrossel -->
+    <section id="portfolio" class="container mx-auto py-16 text-center">
+      <h2 class="text-3xl font-semibold mb-8">Portfólio</h2>
+      <div class="relative max-w-xl mx-auto">
+        <img id="portfolioImage" src="site1.png" alt="Site do portfólio" class="w-full h-85 object-cover rounded-lg shadow-lg transition duration-500 ease-in-out">
+        <button id="prevBtn" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60">◀</button>
+        <button id="nextBtn" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60">▶</button>
+      </div>
+    </section>
+
+    <section id="depoimento-form" class="py-16 text-center">
+  <h2 class="text-3xl font-semibold mb-4">Deixe seu depoimento</h2>
+  
+  <input id="nome" type="text" class="p-2 border border-green-500 rounded-lg mb-4 dark:bg-gray-800 dark:text-gray-100"><br>
+
+  <select id="estrelas" class="p-2 border border-green-500 rounded-lg mb-4 dark:bg-gray-800 dark:text-gray-100">
+    <option value="">Selecione a avaliação</option>
+    <option value="1">⭐</option>
+    <option value="2">⭐⭐</option>
+    <option value="3">⭐⭐⭐</option>
+    <option value="4">⭐⭐⭐⭐</option>
+    <option value="5">⭐⭐⭐⭐⭐</option>
+  </select><br>
+
+  <textarea id="mensagem" class="p-2 border border-green-500 rounded-lg mb-4 dark:bg-gray-800 dark:text-gray-100"></textarea><br>
+
+  <button id="enviar" class="bg-green-500 text-gray-100 p-2 rounded">
+    Enviar avaliação
+  </button>
+</section>
+
+<section id="depoimento-list" class="py-16">
+  <h2 class="text-3xl font-semibold mb-4">Depoimentos</h2>
+  <ul id="depoimento-ul" class="space-y-4"></ul>
+</section>
+
+
+    <!-- Contato -->
+    <section id="contato" class="container mx-auto py-16 text-center">
+      <h2 class="text-3xl font-semibold mb-4">Pronto para criar seu site incrível?</h2>
+      <p class="mb-6">Vamos dar vida ao seu projeto digital com qualidade e profissionalismo!</p>
+      <a href="mailto:williansantosdev@gmail.com" class="bg-green-500 hover:bg-green-600 text-white py-3 px-8 rounded-lg text-lg transform transition-transform hover:scale-110">Solicitar Orçamento Gratuito</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-200 text-center py-6">
+    <p>Willian Santos - Criador de Sites e Landing Pages</p>
+    <p>Email: williansantosdev@email.com | WhatsApp: (41) 92002-4397</p>
+    <p>© 2025 Willian Santos. Todos os direitos reservados.</p>
+  </footer>
+
+ <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js" type="module"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore.js" type="module"></script>
+
+
+<script type="module">
+  // Importando as funções que vamos usar
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+  import { getFirestore, collection, addDoc, onSnapshot, orderBy, query } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore.js";
+
+  // Configurando o Firebase
+  const firebaseConfig = {
+  apiKey: "AIzaSyDuZ5uIX69yUWPda0anoBm2auAE6rKkWW8",
+  authDomain: "avaliacoes-landing.firebaseapp.com",
+  projectId: "avaliacoes-landing",
+  storageBucket: "avaliacoes-landing.firebasestorage.app",
+  messagingSenderId: "147116283083",
+  appId: "1:147116283083:web:4a6821cc073b686460b74e"
+};
+  
+  // Inicializando
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Enviar depoimento
+  document.getElementById('enviar')?.addEventListener('click', async () => {
+    const nome = document.getElementById('nome').value.trim();
+    const estrelas = parseInt(document.getElementById('estrelas').value);
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    if (nome && estrelas && mensagem) {
+      await addDoc(collection(db, 'depoimentos'), { nome, estrelas, mensagem, criadoEm: new Date() });
+      alert('Seu depoimento foi enviado!');
+      document.getElementById('nome').value = '';
+      document.getElementById('estrelas').value = '';
+      document.getElementById('mensagem').value = '';
+    } else {
+      alert('Preencha todos os campos!');
+    }
+  });
+
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  // onSnapshot aqui
+  // Listar pelo mais recentes:
+  onSnapshot(
+    query(collection(db, 'depoimentos'), orderBy('criadoEm', 'desc')),
+    (snapshot) => {
+      const ul = document.getElementById('depoimento-ul');
+      ul.innerHTML = '';
+      snapshot.forEach((doc) => {
+        const { nome, estrelas, mensagem } = doc.data();
+
+        ul.innerHTML += `
+  <li class="p-4 bg-gray-100 dark:bg-gray-700 dark:text-gray-100 rounded shadow">
+    <strong>${nome}</strong> - ${'⭐'.repeat(estrelas)}<br>${mensagem}
+  </li>`;
+;
+      });
+    }
+  );
+
+});
+  
+  // Carrossel
+  const imagens = ["Infor-game.png", "infor-game2.png", "site-mestre.png", "blog.png"]; // Altere pelos nomes corretos
+  let index = 0;
+  const img = document.getElementById('portfolioImage');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function mostrarImagem(i) {
+    img.src = imagens[i];
+  }
+  
+  prevBtn?.addEventListener('click', () => {
+    index = (index - 1 + imagens.length) % imagens.length;
+    mostrarImagem(index);
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    index = (index + 1) % imagens.length;
+    mostrarImagem(index);
+  });
+
+  mostrarImagem(index);
+
+  setInterval(() => {
+    index = (index + 1) % imagens.length;
+    mostrarImagem(index);
+  }, 5000);
+
+  document.getElementById('darkModeToggle')?.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+  });
+
+
+
+ 
+</script>
+
+
+</body>
+</html>
